@@ -29,9 +29,17 @@
    Или скачайте файлы проекта с [GitHub](https://github.com/mr-Abdrahimov/tg-online)
 
 2. Запустите скрипт:
+
+   **Для Linux/macOS:**
    ```bash
    ./run_docker.sh
    ```
+
+   **Для Windows:**
+   ```cmd
+   run_docker.bat
+   ```
+   Или просто дважды кликните на файл `run_docker.bat`
 
 3. **При первом запуске:**
    - Вам будет предложено ввести данные вашего Telegram аккаунта (номер телефона и код подтверждения)
@@ -43,8 +51,14 @@
 
 ### Остановка
 
-Чтобы остановить скрипт, выполните:
+**Для Linux/macOS:**
 ```bash
+docker stop telegram_online
+docker rm telegram_online
+```
+
+**Для Windows:**
+```cmd
 docker stop telegram_online
 docker rm telegram_online
 ```
@@ -62,7 +76,8 @@ docker rm telegram_online
 ## 📝 Файлы проекта
 
 - `online.php` - основной скрипт, который проверяет время и обновляет статус
-- `run_docker.sh` - скрипт для запуска в Docker контейнере
+- `run_docker.sh` - скрипт для запуска в Docker контейнере (Linux/macOS)
+- `run_docker.bat` - скрипт для запуска в Docker контейнере (Windows)
 - `session.madeline/` - папка с сохраненной сессией (создается автоматически)
 
 ## ⚠️ Важно
@@ -109,9 +124,17 @@ The script automatically checks the current time every second and updates the st
    Or download project files from [GitHub](https://github.com/mr-Abdrahimov/tg-online)
 
 2. Run the script:
+
+   **For Linux/macOS:**
    ```bash
    ./run_docker.sh
    ```
+
+   **For Windows:**
+   ```cmd
+   run_docker.bat
+   ```
+   Or simply double-click the `run_docker.bat` file
 
 3. **On first run:**
    - You will be prompted to enter your Telegram account details (phone number and confirmation code)
@@ -123,8 +146,14 @@ The script automatically checks the current time every second and updates the st
 
 ### Stopping
 
-To stop the script, run:
+**For Linux/macOS:**
 ```bash
+docker stop telegram_online
+docker rm telegram_online
+```
+
+**For Windows:**
+```cmd
 docker stop telegram_online
 docker rm telegram_online
 ```
@@ -142,7 +171,8 @@ Algorithm:
 ## 📝 Project Files
 
 - `online.php` - main script that checks time and updates status
-- `run_docker.sh` - script to run in Docker container
+- `run_docker.sh` - script to run in Docker container (Linux/macOS)
+- `run_docker.bat` - script to run in Docker container (Windows)
 - `session.madeline/` - folder with saved session (created automatically)
 
 ## ⚠️ Important
