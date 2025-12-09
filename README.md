@@ -1,16 +1,24 @@
 # 🟢 Telegram Online
 
-Автоматический скрипт для отображения статуса "онлайн" в Telegram в определенные "красивые" моменты времени.
+Автоматический скрипт для отображения статуса "онлайн" в Telegram.
 
 **Репозиторий:** [https://github.com/mr-Abdrahimov/tg-online](https://github.com/mr-Abdrahimov/tg-online)
 
 ## 📖 Описание
 
-Этот проект позволяет автоматически показывать ваш статус "онлайн" в Telegram только в определенные моменты времени:
+Проект предоставляет два варианта работы:
+
+### Вариант 1: Обновление в "красивые" моменты времени (по умолчанию)
+
+Скрипт показывает ваш статус "онлайн" только в определенные моменты времени:
 - **Одинаковые цифры**: `00:00`, `11:11`, `22:22`
 - **Круглые времена**: `00:00`, `01:00`, `02:00`, `03:00`, `04:00`, `05:00`, `06:00`, `07:00`, `08:00`, `09:00`, `10:00`, `11:00`, `12:00`, `13:00`, `14:00`, `15:00`, `16:00`, `17:00`, `18:00`, `19:00`, `20:00`, `21:00`, `22:00`, `23:00`
 
 Скрипт автоматически проверяет текущее время каждую секунду и обновляет статус на "онлайн" примерно на 15-й секунде после наступления "красивого" времени.
+
+### Вариант 2: Простое обновление каждые 15 секунд
+
+Упрощенная версия скрипта, которая обновляет статус "онлайн" каждые 15 секунд без проверки времени.
 
 ## 🚀 Как запустить
 
@@ -30,16 +38,31 @@
 
 2. Запустите скрипт:
 
-   **Для Linux/macOS:**
+   **Вариант 1: Обновление в "красивые" моменты времени**
+   
+   Для Linux/macOS:
    ```bash
    ./run_docker.sh
    ```
-
-   **Для Windows:**
+   
+   Для Windows:
    ```cmd
    run_docker.bat
    ```
-   Или просто дважды кликните на файл `run_docker.bat`
+   
+   **Вариант 2: Простое обновление каждые 15 секунд**
+   
+   Для Linux/macOS:
+   ```bash
+   ./run_docker_simple.sh
+   ```
+   
+   Для Windows:
+   ```cmd
+   run_docker_simple.bat
+   ```
+   
+   Или просто дважды кликните на соответствующий `.bat` файл
 
 3. **При первом запуске:**
    - Вам будет предложено ввести данные вашего Telegram аккаунта (номер телефона и код подтверждения)
@@ -51,16 +74,32 @@
 
 ### Остановка
 
-**Для Linux/macOS:**
+**Для варианта 1 (красивые времена):**
+
+Для Linux/macOS:
 ```bash
 docker stop telegram_online
 docker rm telegram_online
 ```
 
-**Для Windows:**
+Для Windows:
 ```cmd
 docker stop telegram_online
 docker rm telegram_online
+```
+
+**Для варианта 2 (каждые 15 секунд):**
+
+Для Linux/macOS:
+```bash
+docker stop telegram_online_simple
+docker rm telegram_online_simple
+```
+
+Для Windows:
+```cmd
+docker stop telegram_online_simple
+docker rm telegram_online_simple
 ```
 
 ## 🔧 Как это работает
@@ -75,9 +114,19 @@ docker rm telegram_online
 
 ## 📝 Файлы проекта
 
-- `online.php` - основной скрипт, который проверяет время и обновляет статус
+**Основные скрипты:**
+- `online.php` - скрипт с проверкой "красивых" времен (вариант 1)
+- `online_simple.php` - упрощенный скрипт, обновляет статус каждые 15 секунд (вариант 2)
+
+**Скрипты запуска для варианта 1:**
 - `run_docker.sh` - скрипт для запуска в Docker контейнере (Linux/macOS)
 - `run_docker.bat` - скрипт для запуска в Docker контейнере (Windows)
+
+**Скрипты запуска для варианта 2:**
+- `run_docker_simple.sh` - скрипт для запуска упрощенной версии (Linux/macOS)
+- `run_docker_simple.bat` - скрипт для запуска упрощенной версии (Windows)
+
+**Другие файлы:**
 - `session.madeline/` - папка с сохраненной сессией (создается автоматически)
 
 ## ⚠️ Важно
@@ -95,17 +144,25 @@ docker rm telegram_online
 
 # 🟢 Telegram Online
 
-Automatic script to display "online" status in Telegram at specific "beautiful" time moments.
+Automatic script to display "online" status in Telegram.
 
 **Repository:** [https://github.com/mr-Abdrahimov/tg-online](https://github.com/mr-Abdrahimov/tg-online)
 
 ## 📖 Description
 
-This project allows you to automatically show your "online" status in Telegram only at specific time moments:
+The project provides two operation modes:
+
+### Option 1: Update at "beautiful" time moments (default)
+
+The script shows your "online" status only at specific time moments:
 - **Same digits**: `00:00`, `11:11`, `22:22`
 - **Round times**: `00:00`, `01:00`, `02:00`, `03:00`, `04:00`, `05:00`, `06:00`, `07:00`, `08:00`, `09:00`, `10:00`, `11:00`, `12:00`, `13:00`, `14:00`, `15:00`, `16:00`, `17:00`, `18:00`, `19:00`, `20:00`, `21:00`, `22:00`, `23:00`
 
 The script automatically checks the current time every second and updates the status to "online" approximately at the 15th second after a "beautiful" time occurs.
+
+### Option 2: Simple update every 15 seconds
+
+A simplified version of the script that updates the "online" status every 15 seconds without checking the time.
 
 ## 🚀 How to Run
 
@@ -125,16 +182,31 @@ The script automatically checks the current time every second and updates the st
 
 2. Run the script:
 
-   **For Linux/macOS:**
+   **Option 1: Update at "beautiful" time moments**
+   
+   For Linux/macOS:
    ```bash
    ./run_docker.sh
    ```
-
-   **For Windows:**
+   
+   For Windows:
    ```cmd
    run_docker.bat
    ```
-   Or simply double-click the `run_docker.bat` file
+   
+   **Option 2: Simple update every 15 seconds**
+   
+   For Linux/macOS:
+   ```bash
+   ./run_docker_simple.sh
+   ```
+   
+   For Windows:
+   ```cmd
+   run_docker_simple.bat
+   ```
+   
+   Or simply double-click the corresponding `.bat` file
 
 3. **On first run:**
    - You will be prompted to enter your Telegram account details (phone number and confirmation code)
@@ -146,16 +218,32 @@ The script automatically checks the current time every second and updates the st
 
 ### Stopping
 
-**For Linux/macOS:**
+**For option 1 (beautiful times):**
+
+For Linux/macOS:
 ```bash
 docker stop telegram_online
 docker rm telegram_online
 ```
 
-**For Windows:**
+For Windows:
 ```cmd
 docker stop telegram_online
 docker rm telegram_online
+```
+
+**For option 2 (every 15 seconds):**
+
+For Linux/macOS:
+```bash
+docker stop telegram_online_simple
+docker rm telegram_online_simple
+```
+
+For Windows:
+```cmd
+docker stop telegram_online_simple
+docker rm telegram_online_simple
 ```
 
 ## 🔧 How It Works
@@ -170,9 +258,19 @@ Algorithm:
 
 ## 📝 Project Files
 
-- `online.php` - main script that checks time and updates status
+**Main scripts:**
+- `online.php` - script with "beautiful" time checking (option 1)
+- `online_simple.php` - simplified script that updates status every 15 seconds (option 2)
+
+**Launch scripts for option 1:**
 - `run_docker.sh` - script to run in Docker container (Linux/macOS)
 - `run_docker.bat` - script to run in Docker container (Windows)
+
+**Launch scripts for option 2:**
+- `run_docker_simple.sh` - script to run simplified version (Linux/macOS)
+- `run_docker_simple.bat` - script to run simplified version (Windows)
+
+**Other files:**
 - `session.madeline/` - folder with saved session (created automatically)
 
 ## ⚠️ Important

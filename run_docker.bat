@@ -9,3 +9,4 @@ if not exist "session.madeline" (
 docker run --restart always -d --name telegram_online -v "%CD%":/app hub.madelineproto.xyz/danog/madelineproto:latest php /app/online.php
 exit /b 0
 
+
